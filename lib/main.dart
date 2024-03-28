@@ -11,6 +11,7 @@ import 'package:timezone/data/latest_all.dart' as tz;
 
 void main() async {
   tz.initializeTimeZones();
+
   runApp(const MyApp());
 }
 
