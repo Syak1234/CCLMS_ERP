@@ -8,7 +8,6 @@ import "package:flutter/services.dart";
 import 'package:get/get.dart';
 import "package:shared_preferences/shared_preferences.dart";
 import 'package:timezone/data/latest_all.dart' as tz;
-
 void main() async {
   tz.initializeTimeZones();
 
