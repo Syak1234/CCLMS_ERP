@@ -1,17 +1,17 @@
 import 'dart:io';
 
 import 'package:cclms/class/feesdetails.dart';
-import 'package:cclms/example/pdfClass.dart';
-import 'package:cclms/textcolor/fontcolor.dart';
+// import 'package:cclms/example/pdfClass.dart';
+// import 'package:cclms/textcolor/fontcolor.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:get/get_rx/src/rx_types/rx_types.dart';
-import 'package:intl/intl.dart';
+// import 'package:get/get_rx/src/rx_types/rx_types.dart';
+// import 'package:intl/intl.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
-import 'package:permission_handler/permission_handler.dart';
+// import 'package:permission_handler/permission_handler.dart';
 import 'package:printing/printing.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:shared_preferences/shared_preferences.dart';
@@ -19,6 +19,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 // ignore: must_be_immutable
 class PdfPreviewPage extends StatelessWidget {
   late RxList<FeesInfo> invoice;
+  // ignore: non_constant_identifier_names
   late String fees_type;
   PdfPreviewPage(
     this.invoice,
@@ -44,7 +45,7 @@ class PdfPreviewPage extends StatelessWidget {
 
     pdf.addPage(pw.MultiPage(
         pageFormat: PdfPageFormat.a4,
-        margin: pw.EdgeInsets.all(15),
+        margin: const pw.EdgeInsets.all(15),
         build: (context) => [
               for (int index = 0; index < invoice.length; index++)
                 pw.Partition(
@@ -69,7 +70,7 @@ class PdfPreviewPage extends StatelessWidget {
                                         child: pw.Container(
                                             child: pw.Column(children: [
                                       pw.Padding(
-                                        padding: pw.EdgeInsets.symmetric(
+                                        padding: const pw.EdgeInsets.symmetric(
                                             vertical: 3),
                                         child: pw.Text(
                                             'Contai College of Learning & Management Science',
@@ -108,9 +109,10 @@ class PdfPreviewPage extends StatelessWidget {
                                         pw.MainAxisAlignment.spaceBetween,
                                     children: [
                                       pw.Container(
-                                          margin: pw.EdgeInsets.only(top: 10),
+                                          margin:
+                                              const pw.EdgeInsets.only(top: 10),
                                           // alignment: pw.Alignment.center,
-                                          padding: pw.EdgeInsets.only(
+                                          padding: const pw.EdgeInsets.only(
                                               left: 5, top: 3, bottom: 3),
                                           width: 170,
                                           color: PdfColors.blue100,
@@ -120,9 +122,10 @@ class PdfPreviewPage extends StatelessWidget {
                                                   fontWeight:
                                                       pw.FontWeight.bold))),
                                       pw.Container(
-                                          margin: pw.EdgeInsets.only(top: 10),
+                                          margin:
+                                              const pw.EdgeInsets.only(top: 10),
                                           // alignment: pw.Alignment.center,
-                                          padding: pw.EdgeInsets.only(
+                                          padding: const pw.EdgeInsets.only(
                                               left: 5, top: 3, bottom: 3),
                                           // width: 170,
                                           color: PdfColors.blue100,
@@ -260,11 +263,10 @@ class PdfPreviewPage extends StatelessWidget {
                                 pw.Container(
                                     alignment: pw.Alignment.center,
                                     width: 400,
-                                    padding:
-                                        pw.EdgeInsets.symmetric(vertical: 2),
+                                    padding: const pw.EdgeInsets.symmetric(
+                                        vertical: 2),
                                     child: pw.Text(
-                                        '${invoice[index].in_words}'
-                                            .toUpperCase(),
+                                        invoice[index].in_words.toUpperCase(),
                                         style: pw.TextStyle(
                                           fontSize: 11,
                                           font: font,
@@ -306,7 +308,8 @@ class PdfPreviewPage extends StatelessWidget {
                                     children: [
                                       pw.Row(children: [
                                         pw.Container(
-                                          padding: pw.EdgeInsets.only(left: 12),
+                                          padding: const pw.EdgeInsets.only(
+                                              left: 12),
                                           child: pw.Text(
                                               '1. Fees once paid is not refundable under any circumstances(Except remain unsuccessful\n in HS Examination ${DateTime.now().year}).',
                                               overflow: pw.TextOverflow.visible,
@@ -318,7 +321,8 @@ class PdfPreviewPage extends StatelessWidget {
                                       ]),
                                       pw.Row(children: [
                                         pw.Container(
-                                          padding: pw.EdgeInsets.only(left: 12),
+                                          padding: const pw.EdgeInsets.only(
+                                              left: 12),
                                           child: pw.Text(
                                               '2. Seat Booking amount is valid till the publication of Online H.S Result',
                                               overflow: pw.TextOverflow.visible,
@@ -330,7 +334,8 @@ class PdfPreviewPage extends StatelessWidget {
                                       ]),
                                       pw.Row(children: [
                                         pw.Container(
-                                          padding: pw.EdgeInsets.only(left: 12),
+                                          padding: const pw.EdgeInsets.only(
+                                              left: 12),
                                           child: pw.Text(
                                               '3. The student should strictly adhere to the batch /schedule timings specified by the College.',
                                               overflow: pw.TextOverflow.visible,
@@ -342,7 +347,8 @@ class PdfPreviewPage extends StatelessWidget {
                                       ]),
                                       pw.Row(children: [
                                         pw.Container(
-                                          padding: pw.EdgeInsets.only(left: 12),
+                                          padding: const pw.EdgeInsets.only(
+                                              left: 12),
                                           child: pw.Text(
                                               '4. The student is expected to produce this receipt at the time of collecting the coollecting the course\ncompletion certificate.',
                                               overflow: pw.TextOverflow.visible,
@@ -382,7 +388,7 @@ class PdfPreviewPage extends StatelessWidget {
     //  final directory = await getExternalStorageDirectory();
     final externalDir = await getExternalStorageDirectory();
     final externalPath = externalDir!.path;
-    print(externalPath);
+    // print(externalPath);
     final pdfFile = File('$externalPath/AA.pdf');
     await pdfFile.writeAsBytes(await pdf.save());
 
@@ -408,6 +414,7 @@ class PdfPreviewPage extends StatelessWidget {
           // maxPageWidth: 600,
           // pdfPreviewPageDecoration: BoxDecoration(
           //     border: Border.all(color: Colors.black), color: Colors.blue),
+          // ignore: prefer_interpolation_to_compose_strings
           pdfFileName: fees_type + '_' + pdfname.value + ".pdf",
 
           build: (format) => makePdf(invoice, context),

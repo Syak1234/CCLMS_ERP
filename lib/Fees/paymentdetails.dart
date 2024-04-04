@@ -1,15 +1,15 @@
-import 'dart:convert';
+// import 'dart:convert';
 import 'feesdetailsmedthod.dart';
 import 'package:cclms/Fees/feesinstallinfo.dart';
-import 'package:cclms/class/feesdetails.dart';
+// import 'package:cclms/class/feesdetails.dart';
 import 'package:cclms/getx.dart';
 import 'package:cclms/textcolor/fontcolor.dart';
-import 'package:cclms/urllink.dart';
+// import 'package:cclms/urllink.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:http/http.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+// import 'package:http/http.dart';
+// import 'package:shared_preferences/shared_preferences.dart';
 
 class PaymentDetails extends StatefulWidget {
   const PaymentDetails({super.key});
@@ -28,7 +28,7 @@ class _PaymentDetailsState extends State<PaymentDetails>
   }
 
   Getx obj = Get.put(Getx());
-  var selected1 = Color.fromARGB(166, 148, 198, 240);
+  var selected1 = const Color.fromARGB(166, 148, 198, 240);
   var selected2 = Colors.transparent;
   @override
   Widget build(BuildContext context) {
@@ -86,7 +86,7 @@ class _PaymentDetailsState extends State<PaymentDetails>
                             style: GoogleFonts.robotoSlab(
                                 fontWeight: FontWeight.bold, fontSize: 16),
                           ),
-                          title: Container(
+                          title: SizedBox(
                             width: MediaQuery.of(context).size.width,
                             child: Text(
                               fees.obj.details[index].fees_type.toLowerCase(),
@@ -107,7 +107,7 @@ class _PaymentDetailsState extends State<PaymentDetails>
                                           : Colors.deepOrange,
                                       fontWeight: FontWeight.bold),
                                 )
-                              : Icon(
+                              : const Icon(
                                   Icons.arrow_forward_ios,
                                   size: 15,
                                 )),

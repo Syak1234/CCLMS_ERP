@@ -7,7 +7,7 @@ import 'package:cclms/urllink.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:toast/toast.dart';
+// import 'package:toast/toast.dart';
 
 class FeesDetail {
   // Internet x = Internet('internet');
@@ -32,7 +32,7 @@ class FeesDetail {
             body: data,
             encoding: Encoding.getByName("utf-8"),
           )
-          .timeout(Duration(seconds: 1))
+          .timeout(const Duration(seconds: 1))
           .then((response) {
         if (response.statusCode != 200) {
           throw Internet('Timeout');

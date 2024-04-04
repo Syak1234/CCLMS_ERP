@@ -1,17 +1,18 @@
 import 'dart:convert';
 import 'package:cclms/class/feesdetails.dart';
-import 'package:cclms/class/intalldetails.dart';
+// import 'package:cclms/class/intalldetails.dart';
 import 'package:cclms/getx.dart';
 import 'package:cclms/textcolor/fontcolor.dart';
 import 'package:cclms/urllink.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_rx/src/rx_types/rx_types.dart';
+// import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'pdfview.dart';
+// ignore: must_be_immutable
 class FeesinstallInfo extends StatefulWidget {
   String id;
   String fees_type;
@@ -28,7 +29,7 @@ class _FeesinstallInfoState extends State<FeesinstallInfo> {
   @override
   void initState() {
     feesdetails(widget.id);
-    // TODO: implement initState
+   
     super.initState();
   }
 
@@ -92,7 +93,7 @@ class _FeesinstallInfoState extends State<FeesinstallInfo> {
 
   // late TabController _tabController;
 
-  final selectedColor1 = Color.fromARGB(255, 154, 197, 233);
+  final selectedColor1 = const Color.fromARGB(255, 154, 197, 233);
   final selectedColor2 = Colors.transparent;
   @override
   Widget build(BuildContext context) {
@@ -109,7 +110,7 @@ class _FeesinstallInfoState extends State<FeesinstallInfo> {
                     ));
               },
               backgroundColor: Colors.blue,
-              child: Icon(
+              child: const Icon(
                 Icons.file_download,
                 color: Colors.white,
               ),
@@ -226,12 +227,10 @@ class _FeesinstallInfoState extends State<FeesinstallInfo> {
                                 'Deposit to',
                                 style: FColor.font2,
                               ),
-                              trailing: Container(
-                                child: Text(
-                                  obj.fdetail[index].deposit_to,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: FColor.font,
-                                ),
+                              trailing: Text(
+                                obj.fdetail[index].deposit_to,
+                                overflow: TextOverflow.ellipsis,
+                                style: FColor.font,
                               ),
                             ),
                           ],
@@ -256,143 +255,8 @@ class _FeesinstallInfoState extends State<FeesinstallInfo> {
                           )
                         : const CircularProgressIndicator()),
 
-            // SingleChildScrollView(
-            //   child: Column(
-            //     children: [
-            //       Container(
-            //         color: FColor.color1,
-            //         child: ListTile(
-            //           title: Text(
-            //             'Total payable amount',
-            //             style: FColor.font2,
-            //           ),
-            //           trailing: Text(
-            //            widget.details[0].id,
-            //             textScaler: const TextScaler.linear(1.4),
-            //           ),
-            //         ),
-            //       ),
-            //       Container(
-            //         color: FColor.color2,
-            //         child: ListTile(
-            //           title: Text(
-            //             'Total received amount',
-            //             style: FColor.font2,
-            //           ),
-            //           subtitle: Text('(${obj.details[0].in_words})'),
-            //           trailing: Text(
-            //             obj.details[0].received_amount,
-            //             textScaler: const TextScaler.linear(1.4),
-            //           ),
-            //         ),
-            //       ),
-            //       Container(
-            //         color: FColor.color1,
-            //         child: ListTile(
-            //           title: Text(
-            //             'Received date',
-            //             style: FColor.font2,
-            //           ),
-            //           trailing: Text(
-            //             obj.details[0].received_date,
-            //             textScaler: const TextScaler.linear(1.4),
-            //           ),
-            //         ),
-            //       ),
-            //       Container(
-            //         color: FColor.color2,
-            //         child: ListTile(
-            //           title: Text(
-            //             'Received in',
-            //             style: FColor.font2,
-            //           ),
-            //           trailing: Text(
-            //             obj.details[0].received_in,
-            //             textScaler: const TextScaler.linear(1.4),
-            //           ),
-            //         ),
-            //       ),
-            //       Container(
-            //         color: FColor.color1,
-            //         child: ListTile(
-            //           title: Text(
-            //             'Discount',
-            //             style: FColor.font2,
-            //           ),
-            //           trailing: Text(
-            //             obj.details[0].discount,
-            //             textScaler: const TextScaler.linear(1.4),
-            //           ),
-            //         ),
-            //       ),
-            //       Container(
-            //         color: FColor.color2,
-            //         child: ListTile(
-            //           title: Text(
-            //             'Due',
-            //             style: FColor.font2,
-            //           ),
-            //           trailing: Text(
-            //             obj.details[0].due,
-            //             textScaler: const TextScaler.linear(1.4),
-            //           ),
-            //         ),
-            //       ),
-            //       Container(
-            //         color: FColor.color1,
-            //         child: ListTile(
-            //           title: Text(
-            //             'Fine',
-            //             style: FColor.font2,
-            //           ),
-            //           trailing: Text(
-            //             obj.details[0].fine,
-            //             textScaler: const TextScaler.linear(1.4),
-            //           ),
-            //         ),
-            //       ),
-            //       Container(
-            //         color: FColor.color2,
-            //         child: ListTile(
-            //           title: Text(
-            //             'Next payment date',
-            //             style: FColor.font2,
-            //           ),
-            //           trailing: Text(
-            //             obj.details[0].next_date,
-            //             textScaler: const TextScaler.linear(1.4),
-            //           ),
-            //         ),
-            //       ),
-            //       Container(
-            //         color: FColor.color1,
-            //         child: ListTile(
-            //           title: Text(
-            //             'Memo id',
-            //             style: FColor.font2,
-            //           ),
-            //           trailing: Text(
-            //             obj.details[0].memo_id,
-            //             textScaler: const TextScaler.linear(1.4),
-            //           ),
-            //         ),
-            //       ),
-            //       Container(
-            //         color: FColor.color2,
-            //         child: ListTile(
-            //           title: Text(
-            //             'Diposite in',
-            //             style: FColor.font2,
-            //           ),
-            //           trailing: Text(
-            //             obj.details[0].deposit_to,
-            //             textScaler: const TextScaler.linear(1.4),
-            //           ),
-            //         ),
-            //       ),
-            //     ],
-            //   ),
-            // ),
+          
+          
           ),
         ),
       ),
