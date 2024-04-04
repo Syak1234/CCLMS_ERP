@@ -9,12 +9,9 @@ import 'package:cclms/getx.dart';
 import 'package:cclms/textcolor/fontcolor.dart';
 import 'package:cclms/class/userDetails.dart';
 import 'package:cclms/userprofile.dart';
-// import 'package:circles_background/circles_background.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-
-// import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -440,12 +437,8 @@ class _DashBoardState extends State<DashBoard> {
               children: [
                 Container(
                   color: Colors.blue[100],
-                  // width: 250,
-                  // height: 500,
-
                   padding: const EdgeInsets.all(10),
                   child: Column(
-                    // mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -511,7 +504,6 @@ class _DashBoardState extends State<DashBoard> {
                             child: Card(
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width / 3.6,
-                                // height: MediaQuery.sizeOf(context).height / 7,
                                 padding: const EdgeInsets.all(10),
                                 child: Column(
                                   children: [
@@ -536,7 +528,6 @@ class _DashBoardState extends State<DashBoard> {
                           Card(
                             child: Container(
                               width: MediaQuery.sizeOf(context).width / 3.6,
-                              // height: MediaQuery.sizeOf(context).height / 6,
                               padding: const EdgeInsets.all(10),
                               child: Column(
                                 children: [
